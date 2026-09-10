@@ -59,3 +59,9 @@ wage-calc-export.json
 
 # scratch
 commitmsg.tmp
+
+# editor / tooling artifacts
+.neon
+
+# demo database used to generate screenshots
+demo.db

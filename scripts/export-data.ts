@@ -11,7 +11,7 @@ import "dotenv/config";
 import { writeFileSync } from "node:fs";
 import { prisma } from "../src/lib/db";
 
-const out = process.argv[2] ?? "wage-calc-export.json";
+const out = process.argv[2] ?? "worqr-export.json";
 
 async function main() {
   const data = {

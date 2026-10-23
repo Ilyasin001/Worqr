@@ -1,6 +1,6 @@
 // GENERATED FILE — do not edit.
 // Run `npm run schema:prod` after changing prisma/schema.prisma.
-// Wage-Calc schema — see docs/SPECIFICATION.md §4.
+// Worqr schema — see docs/SPECIFICATION.md §4.
 // Dev runs on SQLite; production targets Postgres (Neon) at deployment.
 // Kept portable: no enums / Json columns (unsupported on SQLite) — those
 // fields are strings validated by Zod at the app boundary.

@@ -19,7 +19,7 @@ export function TopAppBar() {
     ? pathname === "/shifts/new"
       ? "New Shift"
       : "Edit Shift"
-    : "Wage-Calc";
+    : "Worqr";
 
   return (
     <header className="fixed top-0 z-50 flex h-11 w-full items-center justify-between border-b border-outline-variant bg-surface px-5">

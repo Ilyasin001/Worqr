@@ -1,6 +1,6 @@
 # Architecture
 
-How Wage-Calc is put together, and why. The short version lives in the
+How Worqr is put together, and why. The short version lives in the
 [README](../README.md); this is the detail behind it.
 
 ---

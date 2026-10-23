@@ -83,7 +83,7 @@ async function main() {
 
   console.log("");
   console.log("==============================================");
-  console.log("  Wage-Calc account ready — SAVE THESE DETAILS");
+  console.log("  Worqr account ready — SAVE THESE DETAILS");
   console.log("==============================================");
   console.log(`  Database: ${target}`);
   console.log(`  ${action}`);

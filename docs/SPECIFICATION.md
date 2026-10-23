@@ -1,4 +1,4 @@
-# Wage-Calc — Application Specification
+# Worqr — Application Specification
 
 > Status: **Awaiting product-owner approval** — no code is written until this document is approved.
 > Last updated: 2026-08-06

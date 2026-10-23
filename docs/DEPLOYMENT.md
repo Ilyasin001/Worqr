@@ -1,4 +1,4 @@
-# Wage-Calc — Deployment Runbook (Milestone 9)
+# Worqr — Deployment Runbook (Milestone 9)
 
 Everything in this repository is ready to deploy. The only things that cannot
 be prepared in advance are the two accounts, which have to be created by you:

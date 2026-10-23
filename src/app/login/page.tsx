@@ -38,7 +38,7 @@ export default async function LoginPage({
           £
         </div>
         <h1 className="text-[24px] font-bold tracking-[-0.02em] text-primary">
-          Wage-Calc
+          Worqr
         </h1>
         <p className="mt-1 text-[13px] text-on-surface-variant">
           Sign in to continue

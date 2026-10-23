@@ -11,7 +11,7 @@ import { readFileSync } from "node:fs";
 import { prisma } from "../src/lib/db";
 import type { Prisma } from "../src/generated/prisma/client";
 
-const file = process.argv[2] ?? "wage-calc-export.json";
+const file = process.argv[2] ?? "worqr-export.json";
 
 /**
  * Dates arrive as ISO strings in JSON and must go back as Date objects.

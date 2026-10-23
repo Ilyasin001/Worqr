@@ -1,4 +1,4 @@
-# Wage-Calc — Implementation Plan
+# Worqr — Implementation Plan
 
 > Executes only after SPECIFICATION.md is approved. Milestones are sequential; each ends with its tests passing and nothing known-broken.
 
@@ -11,7 +11,7 @@
 ## Milestone 2 — Data layer & wage engine
 **Objective:** the maths and schema, fully tested before any UI uses them.
 - Full Prisma schema + migrations (incl. partial unique supervisor index).
-- Pure wage-calculation module (pence arithmetic, overnight, breaks, rounding) + overlap detector.
+- Pure worqrulation module (pence arithmetic, overnight, breaks, rounding) + overlap detector.
 - Exhaustive unit tests (this is the milestone where calculation correctness is proven).
 - **Accept:** all calc/overlap unit tests pass; migrations apply cleanly.
 

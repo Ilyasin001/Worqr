@@ -19,13 +19,13 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Wage-Calc",
-    template: "%s · Wage-Calc",
+    default: "Worqr",
+    template: "%s · Worqr",
   },
   description: "Shift wage calculator and payroll record",
   appleWebApp: {
     capable: true,
-    title: "Wage-Calc",
+    title: "Worqr",
     statusBarStyle: "default",
   },
 };

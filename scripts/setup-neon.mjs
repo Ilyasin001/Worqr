@@ -81,7 +81,7 @@ function run(label, file, args) {
 }
 
 const host = url.replace(/^[^@]*@/, "").split(/[/?]/)[0];
-console.log(`\nWage-Calc — production setup against ${host}`);
+console.log(`\nWorqr — production setup against ${host}`);
 
 // The generated client is provider-specific — build the Postgres one first,
 // otherwise the import and seed steps fail with "adapter @prisma/adapter-pg

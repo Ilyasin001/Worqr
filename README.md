@@ -1,6 +1,6 @@
-# Wage-Calc 🧮
+# Worqr 🧮
 
-[![CI](https://github.com/Ilyasin001/Wage-Calc/actions/workflows/ci.yml/badge.svg)](https://github.com/Ilyasin001/Wage-Calc/actions/workflows/ci.yml) ![Next.js](https://img.shields.io/badge/Next.js-16-000?logo=next.js) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white) ![Postgres](https://img.shields.io/badge/Neon-Postgres-00E599?logo=postgresql&logoColor=white) ![Tests](https://img.shields.io/badge/tests-91%20unit%20%2B%2014%20e2e-success)
+[![CI](https://github.com/Ilyasin001/Worqr/actions/workflows/ci.yml/badge.svg)](https://github.com/Ilyasin001/Worqr/actions/workflows/ci.yml) ![Next.js](https://img.shields.io/badge/Next.js-16-000?logo=next.js) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white) ![Postgres](https://img.shields.io/badge/Neon-Postgres-00E599?logo=postgresql&logoColor=white) ![Tests](https://img.shields.io/badge/tests-91%20unit%20%2B%2014%20e2e-success)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 **Payroll for event staffing, built for a single accountant managing payroll in their head.**
@@ -61,8 +61,8 @@ Full architectural details are available in [<code>docs/ARCHITECTURE.md</code>](
 ## 🚀 Running it Locally
 
 ```bash
-git clone https://github.com/Ilyasin001/Wage-Calc.git
-cd Wage-Calc
+git clone https://github.com/Ilyasin001/Worqr.git
+cd Worqr
 npm install
 
 cp .env.example .env          # then set AUTH_SECRET — npm run gen:secret

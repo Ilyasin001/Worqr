@@ -28,7 +28,7 @@ export function StaffForm({
   const [state, formAction, pending] = useActionState(action, undefined);
 
   return (
-    <form action={formAction} className="space-y-4">
+    <form action={formAction} className="stagger space-y-4">
       {state?.error && <ErrorBanner>{state.error}</ErrorBanner>}
       <Field label="Name">
         <TextInput

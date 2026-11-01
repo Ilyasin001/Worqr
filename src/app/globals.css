@@ -101,3 +101,108 @@ body {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* ── Loading skeletons ─────────────────────────────────────────────── */
+
+.skeleton {
+  background-color: var(--color-surface-container-high);
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(255 255 255 / 0.6) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+/* ── Entrance animations ───────────────────────────────────────────────
+ * Short and subtle: content rises 6px and fades in once, when it mounts.
+ * Sections and articles animate everywhere inside <main>; .stagger lists
+ * cascade their children; .tag chips pop in after their row.
+ * CSS animations only run on insertion, so server-action re-renders that
+ * keep the DOM don't replay them.
+ */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes tag-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main h1,
+  main :where(section, article),
+  .stagger > *,
+  .rise {
+    animation: rise 320ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  }
+
+  /* Siblings cascade 50ms apart, capped so long lists don't drag. */
+  main :where(section, article):nth-of-type(2),
+  .stagger > :nth-child(2) {
+    animation-delay: 50ms;
+  }
+  main :where(section, article):nth-of-type(3),
+  .stagger > :nth-child(3) {
+    animation-delay: 100ms;
+  }
+  main :where(section, article):nth-of-type(4),
+  .stagger > :nth-child(4) {
+    animation-delay: 150ms;
+  }
+  main :where(section, article):nth-of-type(5),
+  .stagger > :nth-child(5) {
+    animation-delay: 200ms;
+  }
+  main :where(section, article):nth-of-type(6),
+  .stagger > :nth-child(6) {
+    animation-delay: 250ms;
+  }
+  main :where(section, article):nth-of-type(n + 7),
+  .stagger > :nth-child(n + 7) {
+    animation-delay: 300ms;
+  }
+
+  .tag {
+    animation: tag-pop 220ms cubic-bezier(0.3, 1.4, 0.5, 1) 180ms both;
+  }
+
+  /* Skeleton → content swap: fade the placeholder in so fast loads
+     don't flash it. */
+  [aria-busy="true"] {
+    animation: rise 200ms ease-out 80ms both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}

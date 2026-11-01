@@ -88,7 +88,7 @@ export function StaffList({ staff }: { staff: StaffRow[] }) {
         ))}
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="stagger flex flex-col gap-2">
         {visible.map((s) => (
           <article
             key={s.id}

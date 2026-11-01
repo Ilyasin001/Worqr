@@ -241,7 +241,7 @@ export default async function HomePage() {
           in History.
         </EmptyState>
       ) : (
-        <div className="flex flex-col gap-2">
+        <div className="stagger flex flex-col gap-2">
           {cards.map(({ shift, totalPence, staffCount, fullyPaid }) => (
             <ShiftCard
               key={shift.id}

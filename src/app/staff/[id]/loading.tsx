@@ -5,7 +5,7 @@ import {
   TitleSkeleton,
 } from "@/components/skeleton";
 
-/* Same form as Add staff, plus the deactivate button. */
+/* Same as Add staff, with the deactivate button underneath. */
 export default function Loading() {
   return (
     <PageSkeleton>

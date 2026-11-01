@@ -6,7 +6,7 @@ import {
   TitleSkeleton,
 } from "@/components/skeleton";
 
-/* Filter card, then one row per staff member owed. */
+/* Filter card, then a row for each person who's owed money. */
 export default function Loading() {
   return (
     <PageSkeleton>

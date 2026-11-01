@@ -1,6 +1,6 @@
 import { Bone, PageSkeleton } from "@/components/skeleton";
 
-/* Logo, title, then the sign-in card with two fields and a button. */
+/* Logo and title, then the sign-in card (two fields and a button). */
 export default function Loading() {
   return (
     <PageSkeleton className="flex min-h-[85vh] flex-col justify-center">

@@ -1,6 +1,6 @@
 import { Bone, CardSkeleton, PageSkeleton } from "@/components/skeleton";
 
-/* Header with chip + actions, the pay breakdown card, then the audit log. */
+/* Title row with the paid chip and buttons, the pay breakdown, then the audit log. */
 export default function Loading() {
   return (
     <PageSkeleton>

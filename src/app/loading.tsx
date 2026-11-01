@@ -5,7 +5,7 @@ import {
   ShiftListSkeleton,
 } from "@/components/skeleton";
 
-/* Dashboard: hero stats card, then the recent-shifts list. */
+/* Dashboard: the stats card up top, then recent shifts. */
 export default function Loading() {
   return (
     <PageSkeleton className="pt-4">

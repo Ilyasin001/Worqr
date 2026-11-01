@@ -6,7 +6,7 @@ import {
   TitleSkeleton,
 } from "@/components/skeleton";
 
-/* Preset chips, range form, then the summary card. */
+/* Date preset chips, the range form, then the summary card. */
 export default function Loading() {
   return (
     <PageSkeleton>

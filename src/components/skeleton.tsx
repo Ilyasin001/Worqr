@@ -1,17 +1,17 @@
 import type { ReactNode } from "react";
 
 /*
- * Skeleton placeholders shown by each route's loading.tsx while its server
- * component streams. Shapes mirror the real screens so nothing jumps when
- * the content lands.
+ * Placeholders for each route's loading.tsx, shown while the server
+ * component streams in. They copy the real layouts so the page doesn't
+ * jump when the content arrives.
  */
 
-/** One shimmering block. Size it with Tailwind classes. */
+/** A grey shimmering block. Size and shape it with Tailwind classes. */
 export function Bone({ className = "" }: { className?: string }) {
   return <div aria-hidden className={`skeleton rounded-[4px] ${className}`} />;
 }
 
-/** Page wrapper: announces loading once to assistive tech. */
+/** Wraps a page's skeleton and tells screen readers it's loading (once, not per block). */
 export function PageSkeleton({
   children,
   className = "flex flex-col gap-4 pt-4",
@@ -31,7 +31,7 @@ export function TitleSkeleton({ className = "w-32" }: { className?: string }) {
   return <Bone className={`h-7 ${className}`} />;
 }
 
-/** Card frame matching the shared <Card> primitive. */
+/** Same frame as <Card>. */
 export function CardSkeleton({ children }: { children: ReactNode }) {
   return (
     <div className="rounded-[8px] border border-outline-variant bg-surface-container-lowest p-4 shadow-sm">
@@ -40,7 +40,7 @@ export function CardSkeleton({ children }: { children: ReactNode }) {
   );
 }
 
-/** Label + input pair, as rendered by <Field>. */
+/** Label and input, laid out like <Field>. */
 export function FieldSkeleton({ labelWidth = "w-16" }: { labelWidth?: string }) {
   return (
     <div className="flex flex-col gap-1">
@@ -50,7 +50,7 @@ export function FieldSkeleton({ labelWidth = "w-16" }: { labelWidth?: string }) 
   );
 }
 
-/** The from/to date filter card used by History and Reports. */
+/** The from/to date filter card on History and Reports. */
 export function RangeFormSkeleton() {
   return (
     <CardSkeleton>
@@ -63,7 +63,7 @@ export function RangeFormSkeleton() {
   );
 }
 
-/** Mirrors <ShiftCard>: icon tile, two text lines, right-aligned pay. */
+/** Same layout as <ShiftCard>: icon tile, two lines of text, pay on the right. */
 export function ShiftCardSkeleton() {
   return (
     <div className="flex items-center justify-between gap-2 rounded-[4px] border border-outline-variant bg-surface-container-lowest p-3 shadow-sm">
@@ -92,7 +92,7 @@ export function ShiftListSkeleton({ count = 4 }: { count?: number }) {
   );
 }
 
-/** Staff / payment row: initials tile, name + chip, trailing actions. */
+/** A staff or payment row: initials tile, name and chip, buttons on the right. */
 export function PersonRowSkeleton() {
   return (
     <div className="flex items-center justify-between gap-3 rounded-[4px] border border-outline-variant bg-surface-container-lowest p-3 shadow-sm">
@@ -108,7 +108,7 @@ export function PersonRowSkeleton() {
   );
 }
 
-/** A titled settings-style section with a card of fields. */
+/** A settings section: heading, then a card of fields. */
 export function SectionSkeleton({ fields = 2 }: { fields?: number }) {
   return (
     <div>
@@ -125,7 +125,7 @@ export function SectionSkeleton({ fields = 2 }: { fields?: number }) {
   );
 }
 
-/** Mirrors <StaffForm>: name, phone, role, submit. */
+/** Matches <StaffForm>: name, phone, role, then the submit button. */
 export function StaffFormSkeleton() {
   return (
     <div className="space-y-4">
@@ -137,7 +137,7 @@ export function StaffFormSkeleton() {
   );
 }
 
-/** Mirrors <ShiftForm>: details, rates, staff entries, save. */
+/** Matches <ShiftForm>: shift details, rates, staff entries, save button. */
 export function ShiftFormSkeleton() {
   return (
     <>

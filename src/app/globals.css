@@ -102,7 +102,7 @@ body {
   cursor: not-allowed;
 }
 
-/* ── Loading skeletons ─────────────────────────────────────────────── */
+/* Skeleton placeholder blocks (see components/skeleton.tsx). */
 
 .skeleton {
   background-color: var(--color-surface-container-high);
@@ -126,12 +126,12 @@ body {
   }
 }
 
-/* ── Entrance animations ───────────────────────────────────────────────
- * Short and subtle: content rises 6px and fades in once, when it mounts.
- * Sections and articles animate everywhere inside <main>; .stagger lists
- * cascade their children; .tag chips pop in after their row.
- * CSS animations only run on insertion, so server-action re-renders that
- * keep the DOM don't replay them.
+/*
+ * Entrance animations. Content fades in and rises 6px when it mounts.
+ * Every section and article in <main> gets this, and so do the children
+ * of a .stagger container. .tag chips pop in a little after their row.
+ * Server actions don't replay any of it: React keeps the existing nodes,
+ * and a CSS animation only runs when its element is inserted.
  */
 
 @keyframes rise {
@@ -164,7 +164,8 @@ body {
     animation: rise 320ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
   }
 
-  /* Siblings cascade 50ms apart, capped so long lists don't drag. */
+  /* Each sibling starts 50ms after the one before. It stops at 300ms so a
+     long list doesn't take ages to appear. */
   main :where(section, article):nth-of-type(2),
   .stagger > :nth-child(2) {
     animation-delay: 50ms;
@@ -194,8 +195,8 @@ body {
     animation: tag-pop 220ms cubic-bezier(0.3, 1.4, 0.5, 1) 180ms both;
   }
 
-  /* Skeleton → content swap: fade the placeholder in so fast loads
-     don't flash it. */
+  /* Hold the skeleton back 80ms and fade it in, so a page that loads
+     quickly doesn't flash grey blocks first. */
   [aria-busy="true"] {
     animation: rise 200ms ease-out 80ms both;
   }

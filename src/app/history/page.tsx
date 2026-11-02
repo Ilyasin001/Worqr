@@ -52,7 +52,7 @@ export default async function HistoryPage({
   const filtered = from || to || locationId || staffId;
 
   return (
-    <div className="flex flex-col gap-4 pt-4">
+    <div className="stagger flex flex-col gap-4 pt-4">
       <h1 className="text-[20px] font-semibold text-on-surface">History</h1>
 
       <Card>
@@ -116,7 +116,7 @@ export default async function HistoryPage({
               ? "Showing the most recent 300 shifts — narrow the filters to see older ones."
               : `${cards.length} ${cards.length === 1 ? "shift" : "shifts"}`}
           </p>
-          <div className="flex flex-col gap-2">
+          <div className="stagger flex flex-col gap-2">
             {cards.map(({ shift, totalPence, staffCount, fullyPaid }) => (
               <ShiftCard
                 key={shift.id}

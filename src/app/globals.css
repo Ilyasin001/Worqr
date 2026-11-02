@@ -101,3 +101,109 @@ body {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* Skeleton placeholder blocks (see components/skeleton.tsx). */
+
+.skeleton {
+  background-color: var(--color-surface-container-high);
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(255 255 255 / 0.6) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+/*
+ * Entrance animations. Content fades in and rises 6px when it mounts.
+ * Every section and article in <main> gets this, and so do the children
+ * of a .stagger container. .tag chips pop in a little after their row.
+ * Server actions don't replay any of it: React keeps the existing nodes,
+ * and a CSS animation only runs when its element is inserted.
+ */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes tag-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main h1,
+  main :where(section, article),
+  .stagger > *,
+  .rise {
+    animation: rise 320ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  }
+
+  /* Each sibling starts 50ms after the one before. It stops at 300ms so a
+     long list doesn't take ages to appear. */
+  main :where(section, article):nth-of-type(2),
+  .stagger > :nth-child(2) {
+    animation-delay: 50ms;
+  }
+  main :where(section, article):nth-of-type(3),
+  .stagger > :nth-child(3) {
+    animation-delay: 100ms;
+  }
+  main :where(section, article):nth-of-type(4),
+  .stagger > :nth-child(4) {
+    animation-delay: 150ms;
+  }
+  main :where(section, article):nth-of-type(5),
+  .stagger > :nth-child(5) {
+    animation-delay: 200ms;
+  }
+  main :where(section, article):nth-of-type(6),
+  .stagger > :nth-child(6) {
+    animation-delay: 250ms;
+  }
+  main :where(section, article):nth-of-type(n + 7),
+  .stagger > :nth-child(n + 7) {
+    animation-delay: 300ms;
+  }
+
+  .tag {
+    animation: tag-pop 220ms cubic-bezier(0.3, 1.4, 0.5, 1) 180ms both;
+  }
+
+  /* Hold the skeleton back 80ms and fade it in, so a page that loads
+     quickly doesn't flash grey blocks first. */
+  [aria-busy="true"] {
+    animation: rise 200ms ease-out 80ms both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}

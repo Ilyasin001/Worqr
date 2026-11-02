@@ -23,7 +23,7 @@ export default async function EditStaffPage({
           {staff.name}
         </h1>
         {!staff.isActive && (
-          <span className="microlabel rounded-[4px] bg-surface-container-high px-3 py-1 text-on-surface-variant">
+          <span className="tag microlabel rounded-[4px] bg-surface-container-high px-3 py-1 text-on-surface-variant">
             Deactivated
           </span>
         )}

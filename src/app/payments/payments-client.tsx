@@ -151,7 +151,7 @@ export function PaymentsClient({
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="stagger flex flex-col gap-4">
       {/* Date range selector */}
       <div className="flex flex-col gap-3 rounded-[8px] border border-outline-variant bg-surface-container-lowest p-4 shadow-sm">
         <div className="flex items-center gap-2">
@@ -201,7 +201,7 @@ export function PaymentsClient({
                     type="button"
                     onClick={() => toggleDay(d)}
                     aria-pressed={!off}
-                    className={`microlabel rounded-[4px] px-2.5 py-1.5 transition-colors ${
+                    className={`tag microlabel rounded-[4px] px-2.5 py-1.5 transition-colors ${
                       off
                         ? "bg-surface-container text-on-surface-variant line-through opacity-60"
                         : "bg-secondary/10 text-secondary"
@@ -300,7 +300,7 @@ export function PaymentsClient({
           </div>
 
           {/* Staff owed cards */}
-          <div className="flex flex-col gap-2">
+          <div className="stagger flex flex-col gap-2">
             {owed.map((o) => (
               <article
                 key={o.staffId}

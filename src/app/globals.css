@@ -68,6 +68,26 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+/*
+ * iOS Safari gives date and time inputs a built-in minimum width and
+ * ignores width: 100%, so in a two-column grid they spill past the card.
+ * Dropping the native appearance lets them shrink. Grid items also refuse
+ * to go narrower than their content unless min-width is 0.
+ */
+input[type="date"],
+input[type="time"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  min-width: 0;
+}
+input::-webkit-date-and-time-value {
+  text-align: left;
+}
+.grid > label {
+  min-width: 0;
+}
+
 /* Supervisor toggle (create-shift screen). */
 .toggle {
   appearance: none;

@@ -19,7 +19,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx prisma generate
-      - run: npx tsc --noEmit
+      # PageProps and LayoutProps are global types that Next generates into
+      # .next/types. A fresh checkout doesn't have them, so typecheck runs
+      # next typegen first.
+      - run: npm run typecheck
       - run: npm run lint
       # Fails if prisma/production/schema.prisma was not regenerated.
       - run: npm test

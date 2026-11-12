@@ -3,26 +3,7 @@ import { prisma } from "@/lib/db";
 import { shiftEntryViews } from "@/lib/shift-view";
 import { Card, EmptyState, inputClass } from "@/components/ui";
 import { ShiftCard } from "@/components/shift-card";
-interface PageProps<AppRoute extends AppRoutes> {
- params: Promise<ParamMap[AppRoute]>;
- searchParams: Promise<Record<string, string | string[] | undefined>>;
-}
 
-Props for Next.js App Router page components
-
-@example
-
-export default function Page(props: PageProps<'/blog/[slug]'>) {
- const { slug } = await props.params
- return <div>Blog post: {slug}</div>
-}
-
-@example
-
-export default function Page(props: PageProps<'/blog/[slug]'>) {
- const { slug } = await props.params
- return <div>Blog post: {slug}</div>
-}
 export const metadata = { title: "History" };
 
 function shortDate(dateStr: string): string {

@@ -9,7 +9,7 @@
     "lint": "eslint",
     "test": "node scripts/prisma-generate.mjs sqlite && vitest run",
     "test:watch": "node scripts/prisma-generate.mjs sqlite && vitest",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "seed": "node scripts/prisma-generate.mjs && tsx prisma/seed.ts",
     "schema:prod": "node scripts/gen-production-schema.mjs",
     "migrate:prod": "node scripts/prisma-generate.mjs && prisma migrate deploy",

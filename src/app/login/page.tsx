@@ -32,7 +32,7 @@ export default async function LoginPage({
   const { error } = await searchParams;
 
   return (
-    <div className="flex min-h-[85vh] flex-col justify-center">
+    <div className="stagger flex min-h-[85vh] flex-col justify-center">
       <div className="mb-8 text-center">
         <div className="money mx-auto mb-3 flex size-14 items-center justify-center rounded-[8px] bg-primary text-[28px] font-bold text-on-primary">
           £

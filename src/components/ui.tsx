@@ -114,7 +114,7 @@ export function StatusChip({
   } as const;
   return (
     <span
-      className={`microlabel inline-block whitespace-nowrap rounded-[4px] px-2.5 py-1 ${tones[tone]}`}
+      className={`tag microlabel inline-block whitespace-nowrap rounded-[4px] px-2.5 py-1 ${tones[tone]}`}
     >
       {children}
     </span>

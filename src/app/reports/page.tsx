@@ -33,7 +33,7 @@ export default async function ReportsPage({
   ];
 
   return (
-    <div className="flex flex-col gap-4 pt-4">
+    <div className="stagger flex flex-col gap-4 pt-4">
       <h1 className="text-[20px] font-semibold text-on-surface">Reports</h1>
 
       <div className="flex flex-wrap gap-2">
@@ -43,7 +43,7 @@ export default async function ReportsPage({
             <Link
               key={q.label}
               href={`/reports?from=${q.from}&to=${q.to}`}
-              className={`microlabel rounded-[4px] px-3 py-1.5 transition-colors ${
+              className={`tag microlabel rounded-[4px] px-3 py-1.5 transition-colors ${
                 active
                   ? "bg-secondary text-on-secondary"
                   : "bg-secondary/10 text-secondary"

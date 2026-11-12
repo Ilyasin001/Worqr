@@ -51,7 +51,7 @@ export default async function ShiftDetailPage({
   const locationNames = new Map(allLocations.map((l) => [l.id, l.name]));
 
   return (
-    <div className="flex flex-col gap-4 pt-4">
+    <div className="stagger flex flex-col gap-4 pt-4">
       {/* Meta sits on its own full-width line: sharing the row with the
           chip and Edit button squeezes it onto two lines. */}
       <div>

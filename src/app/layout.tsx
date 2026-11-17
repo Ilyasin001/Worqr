@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { BottomNav } from "@/components/bottom-nav";
 import { TopAppBar } from "@/components/top-app-bar";
 import { auth } from "@/auth";
 
@@ -46,11 +45,10 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full overflow-x-hidden bg-background font-sans text-[14px] leading-5 text-on-background">
         {session?.user && <TopAppBar />}
         <main
-          className={`mx-auto w-full max-w-2xl px-5 pb-[100px] ${session?.user ? "pt-[60px]" : "pt-4"}`}
+          className={`mx-auto w-full max-w-2xl px-5 pb-10 ${session?.user ? "pt-[60px]" : "pt-4"}`}
         >
           {children}
         </main>
-        {session?.user && <BottomNav />}
       </body>
     </html>
   );

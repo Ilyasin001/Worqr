@@ -63,11 +63,6 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* Safe-area padding for the PWA chrome. */
-.pb-safe {
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
 /*
  * iOS Safari gives date and time inputs a built-in minimum width and
  * ignores width: 100%, so in a two-column grid they spill past the card.

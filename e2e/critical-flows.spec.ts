@@ -72,6 +72,24 @@ test.describe("authenticated journey", () => {
     }
   });
 
+  test("top-right menu opens, navigates, and closes", async ({ page }) => {
+    await expect(page.getByRole("navigation", { name: "Main" })).toHaveCount(0);
+    await page.getByRole("button", { name: "Open menu" }).click();
+    const menu = page.getByRole("navigation", { name: "Main" });
+    for (const label of ["Home", "History", "Payments", "Staff", "Reports", "Settings"]) {
+      await expect(menu.getByRole("link", { name: label })).toBeVisible();
+    }
+    await page.screenshot({ path: "test-results/nav-menu-open.png" });
+
+    await menu.getByRole("link", { name: "Payments" }).click();
+    await expect(page).toHaveURL(/\/payments/);
+    await expect(menu).toHaveCount(0);
+
+    await page.getByRole("button", { name: "Open menu" }).click();
+    await page.keyboard.press("Escape");
+    await expect(menu).toHaveCount(0);
+  });
+
   test("creates staff members", async ({ page }) => {
     for (const [name, role] of [
       ["Alice Test", "manager"],

@@ -1,13 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Icon } from "@/components/icon";
+import { NavMenu } from "@/components/nav-menu";
 
 /**
  * Fixed 44px top app bar (Performance Style). Task-flow routes (shift
  * create/edit) get a contextual back-arrow header; everywhere else shows
- * the brand title with the avatar button linking to Settings.
+ * the brand title with the navigation menu on the right.
  */
 export function TopAppBar() {
   const pathname = usePathname();
@@ -33,9 +33,7 @@ export function TopAppBar() {
           <Icon name="arrow_back" />
         </button>
       ) : (
-        <div className="flex h-11 w-11 items-center justify-start text-on-surface-variant">
-          <Icon name="menu" />
-        </div>
+        <div className="h-11 w-11" />
       )}
       <h1 className="mx-4 truncate text-[18px] font-bold tracking-[-0.01em] text-primary">
         {title}
@@ -43,15 +41,7 @@ export function TopAppBar() {
       {taskFlow ? (
         <div className="h-11 w-11" />
       ) : (
-        <Link
-          href="/settings"
-          aria-label="Settings"
-          className="flex h-11 w-11 items-center justify-end transition-transform duration-150 active:scale-95"
-        >
-          <div className="flex size-8 items-center justify-center overflow-hidden rounded-full border border-outline-variant bg-surface-container-high text-on-surface-variant">
-            <Icon name="person" size={20} />
-          </div>
-        </Link>
+        <NavMenu />
       )}
     </header>
   );

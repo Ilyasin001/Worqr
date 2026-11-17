@@ -785,6 +785,9 @@ export function ShiftForm({
           </button>
         </section>
 
+        {/* Spacer so the fixed footer doesn't cover the last batch */}
+        <div aria-hidden className="h-24" />
+
         {/* Sticky footer: live total + save */}
         <div className="fixed bottom-0 left-0 z-50 flex w-full items-center justify-between border-t border-outline-variant bg-surface-container-lowest px-5 py-4 pb-[calc(16px+env(safe-area-inset-bottom))] shadow-[0_-4px_12px_rgba(15,23,42,0.05)]">
           <div className="flex flex-col">
